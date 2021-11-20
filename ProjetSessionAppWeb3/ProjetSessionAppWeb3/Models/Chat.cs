@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ProjetSessionAppWeb3.Models
 {
-    public class Chat
+    public partial class Chat
     {
         public int IdChat { get; set; }
         public string ChatName { get; set; }
@@ -14,5 +14,6 @@ namespace ProjetSessionAppWeb3.Models
         public virtual User IdCreatorReference { get; set; }
         public virtual ICollection<Message> Messages { get; set; }
         public virtual ICollection<User> Users { get; set; }
+        public virtual ICollection<UserChat> UserChats { get; set; }
     }
 }
