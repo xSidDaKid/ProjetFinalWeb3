@@ -12,8 +12,13 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
     <PackageReference Include="MySql.EntityFrameworkCore" Version="5.0.8" />
     <PackageReference Include="MySql.Web" Version="8.0.27" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Chat\" />
   </ItemGroup>
 
 </Project>
