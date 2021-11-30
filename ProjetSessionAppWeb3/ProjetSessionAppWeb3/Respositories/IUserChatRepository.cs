@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjetSessionAppWeb3.Respositories
 {
-    interface IUserChatRepository
+    public interface IUserChatRepository
     {
         Task CreateUserChat(UserChat uc);
         Task DeleteUserChat(UserChat uc);
