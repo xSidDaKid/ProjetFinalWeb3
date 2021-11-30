@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetSessionAppWeb3", "ProjetSessionAppWeb3\ProjetSessionAppWeb3.csproj", "{FC9BE71F-5444-42F1-A8FA-B5B0141AD3DC}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PFservice", "..\..\projet-finale-service-web\PFservice\PFservice\PFservice.csproj", "{D3933A13-31D8-4635-816A-9B128191D15E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetSessionAppWeb3", "ProjetSessionAppWeb3\ProjetSessionAppWeb3.csproj", "{FC9BE71F-5444-42F1-A8FA-B5B0141AD3DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +15,6 @@ Global
 		{FC9BE71F-5444-42F1-A8FA-B5B0141AD3DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC9BE71F-5444-42F1-A8FA-B5B0141AD3DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC9BE71F-5444-42F1-A8FA-B5B0141AD3DC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D3933A13-31D8-4635-816A-9B128191D15E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D3933A13-31D8-4635-816A-9B128191D15E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D3933A13-31D8-4635-816A-9B128191D15E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D3933A13-31D8-4635-816A-9B128191D15E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

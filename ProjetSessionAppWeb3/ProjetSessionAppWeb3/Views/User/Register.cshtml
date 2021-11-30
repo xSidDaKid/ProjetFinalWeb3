@@ -8,10 +8,16 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8 col-s-12 col-lg-5">
-                <form asp-controller="User" asp-action="doRegister" method="post" class="border border-dark rounded p-5">
+                <form asp-controller="User" asp-action="Register" method="post" class="border border-dark rounded p-5">
                     <div class="mb-3">
                         <h3 class="text-center">Register</h3>
                     </div>
+                    @if (ViewBag.ErrorMessage != null)
+                    {
+                        <div class="mb-3 alert alert-danger text-white">
+                            @ViewBag.ErrorMessage
+                        </div>
+                    }
                     <div class="mb-3">
                         <label class="form-label " type="text">Username</label>
                         <input type="text" asp-for="Username" name="username" id="username" class="form-control" />
@@ -22,11 +28,11 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label" type="text">Password</label>
-                        <input type="text" asp-for="Password" name="password" id="password" class="form-control" />
+                        <input type="password" asp-for="Password" name="password" id="password" class="form-control" />
                     </div>
                     <div class="mb-3">
                         <label class="form-label" type="text">Retype Password</label>
-                        <input type="text" asp-for="Password2" name="password2" id="password2" class="form-control" />
+                        <input type="password" asp-for="Password2" name="password2" id="password2" class="form-control" />
                     </div>
                     <div class="mb-3">
                         <a class="text-primary text-decoration-none" asp-controller="User" asp-action="Login">Login</a>

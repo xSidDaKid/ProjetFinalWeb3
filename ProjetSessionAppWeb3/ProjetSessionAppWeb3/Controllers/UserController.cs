@@ -50,99 +50,50 @@ namespace ProjetSessionAppWeb3.Controllers
         }
 
 
-        public async Task<ActionResult> doRegisterAsync(string username, string password, string password2, string email)
+        [HttpPost]
+        public async Task<ActionResult> Register(string username, string email, string password, string password2)
         {
-            if (password.Equals(password2))
+            ViewBag.ErorMessage = "";
+            if (username == null || email == null || password == null || password2 == null)
             {
-
-
-
+                ViewBag.ErrorMessage = ("Remplir tous les champs");
+                return View();
+            }
+            if (!password.Equals(password2))
+            {
+                ViewBag.ErrorMessage = ("Les deux mots de passes ne sont pas les memes");
+                return View();
+            }
+            else if (password.Equals(password2))
+            {
                 User userRegister = new User();
                 userRegister.Email = email;
                 userRegister.Username = username;
                 userRegister.Password = password;
-
-
                 await _ur.Create(userRegister);
             }
-
-
-            return Index();
+            return View("Login");
         }
 
         [HttpPost]
-        public ActionResult Login(string username, string password)
+        public async Task<ActionResult> Login(string username, string password)
         {
-            /* if (!username.equals("") && !password.equals(""))
-             { 
-
-             }*/
-
-
-            return Index();
-        }
-
-        // GET: UtilisateurController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: UtilisateurController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
+            ViewBag.ErrorMessage = "";
+            if (username == null || password == null)
             {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
+                ViewBag.ErrorMessage = ("Remplir tous les champs");
                 return View();
             }
+            else
+            {
+                User user = await _ur.UserLogin(username, password);
+                //Session("User") = user;
+                return View("../Home/Index");
+            }
+
+            return View("../Home/Index");
         }
 
-        // GET: UtilisateurController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
 
-        // POST: UtilisateurController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: UtilisateurController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: UtilisateurController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }
