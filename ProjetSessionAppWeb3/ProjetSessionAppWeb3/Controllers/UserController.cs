@@ -13,7 +13,15 @@ namespace ProjetSessionAppWeb3.Controllers
     {
         // GET: UtilisateurController
         private UserRepository ur;
+            
+            
         private static int incrementedId;
+        
+        public UserController(UserRepository u)
+        {
+            ur = u;
+        }
+        
         public ActionResult Index()
         {
             return View();
@@ -37,7 +45,15 @@ namespace ProjetSessionAppWeb3.Controllers
             return View();
         }
         [HttpGet]
-        public ActionResult Register(string username, string password, string password2, string email)
+        public ActionResult Register()
+        {
+            
+
+            return View();
+        }
+
+
+        public ActionResult doRegister(string username, string password, string password2, string email)
         {
             if (password.Equals(password2))
             {
@@ -50,7 +66,7 @@ namespace ProjetSessionAppWeb3.Controllers
                 userRegister.Password = password;
                 userRegister.IdUser = incrementedId;
 
-               ur.Create(userRegister);
+                ur.Create(userRegister);
             }
 
 

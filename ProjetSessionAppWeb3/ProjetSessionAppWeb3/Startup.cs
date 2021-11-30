@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ProjetSessionAppWeb3.Models;
+using ProjetSessionAppWeb3.Respositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,7 @@ namespace ProjetSessionAppWeb3
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<DataBaseContext>(o => o.UseMySQL("server=localhost;user id=root;database=projetwebapp3;port=3306"));
+            services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
             services.AddControllersWithViews();
         }
 
