@@ -1,16 +1,12 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ProjetSessionAppWeb3.Hubs;
 using ProjetSessionAppWeb3.Models;
 using ProjetSessionAppWeb3.Respositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ProjetSessionAppWeb3
 {
@@ -30,6 +26,7 @@ namespace ProjetSessionAppWeb3
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddControllersWithViews();
             services.AddSession();
+            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,6 +52,7 @@ namespace ProjetSessionAppWeb3
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapHub<ChatHub>("/chatHub");
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

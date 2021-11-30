@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProjetSessionAppWeb3.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,7 +13,7 @@ namespace ProjetSessionAppWeb3.Respositories
 
         public ChatRepository(DataBaseContext context)
         {
-            if(_context.Chats.Count()>0)
+            if (_context.Chats.Count() > 0)
             {
                 id = _context.Chats.AsEnumerable().Last().IdChat;
                 _context.ChangeTracker.Clear();

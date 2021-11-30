@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProjetSessionAppWeb3.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -29,7 +28,7 @@ namespace ProjetSessionAppWeb3.Respositories
         {
             m.IdMessage = id + 1;
             _context.Messages.Add(m);
-           await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
 
         public async Task Delete(Message m)

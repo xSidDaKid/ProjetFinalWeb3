@@ -1,11 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ProjetSessionAppWeb3.Models;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ProjetSessionAppWeb3.Controllers
 {
@@ -24,6 +20,10 @@ namespace ProjetSessionAppWeb3.Controllers
         }
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+        public IActionResult Test()
         {
             return View();
         }

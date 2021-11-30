@@ -1,8 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ProjetSessionAppWeb3.Models
 {
@@ -20,8 +16,8 @@ namespace ProjetSessionAppWeb3.Models
         public virtual DbSet<UserChat> UserChats { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        { 
-            if(! optionsBuilder.IsConfigured)
+        {
+            if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseMySQL("server=localhost;user id=root;database=projetwebapp3;port=3306");
             }
@@ -179,5 +175,5 @@ namespace ProjetSessionAppWeb3.Models
 
         partial void OnModelCreatingPartial(ModelBuilder modeluBuilder);
 
-    } 
+    }
 }

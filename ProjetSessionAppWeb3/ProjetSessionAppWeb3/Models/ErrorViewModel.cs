@@ -1,5 +1,3 @@
-using System;
-
 namespace ProjetSessionAppWeb3.Models
 {
     public class ErrorViewModel
