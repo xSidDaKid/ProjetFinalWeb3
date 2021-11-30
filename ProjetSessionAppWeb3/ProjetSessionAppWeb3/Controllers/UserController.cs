@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ProjetSessionAppWeb3.Models;
+using ProjetSessionAppWeb3.Respositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +12,16 @@ namespace ProjetSessionAppWeb3.Controllers
     public class UserController : Controller
     {
         // GET: UtilisateurController
-        private readonly 
+        private readonly UserRepository _ur;
+            
+            
+        private static int incrementedId;
+        
+        public UserController(UserRepository u)
+        {
+            _ur = u;
+        }
+        
         public ActionResult Index()
         {
             return View();
@@ -36,6 +47,29 @@ namespace ProjetSessionAppWeb3.Controllers
         [HttpGet]
         public ActionResult Register()
         {
+            
+
+            return View();
+        }
+
+
+        public async Task<ActionResult> doRegisterAsync(string username, string password, string password2, string email)
+        {
+            if (password.Equals(password2))
+            {
+
+
+                incrementedId++;
+                User userRegister = new User();
+                userRegister.Email = email;
+                userRegister.Username = username;
+                userRegister.Password = password;
+                userRegister.IdUser = incrementedId;
+
+               await _ur.Create(userRegister);
+            }
+
+
             return View();
         }
 

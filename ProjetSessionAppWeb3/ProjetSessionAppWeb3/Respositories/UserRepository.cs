@@ -9,7 +9,7 @@ namespace ProjetSessionAppWeb3.Respositories
 {
     public class UserRepository : IUserRepository
     {
-         private readonly DataBaseContext _context;
+        private readonly DataBaseContext _context;
         private int id;
 
         public UserRepository(DataBaseContext context)
