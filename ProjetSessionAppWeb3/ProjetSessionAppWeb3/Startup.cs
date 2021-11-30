@@ -26,8 +26,8 @@ namespace ProjetSessionAppWeb3
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<DataBaseContext>(o => o.UseMySQL("server=localhost;user id=root;database=projetwebapp3;port=3306"));
-            services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
+            services.AddDbContext<DataBaseContext>(o => o.UseMySQL("server=localhost;user id=root;password=root;database=projetwebapp3;port=3306"));
+            services.AddScoped<IUserRepository, UserRepository>();
             services.AddControllersWithViews();
             services.AddSession();
         }

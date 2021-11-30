@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjetSessionAppWeb3.Respositories
 {
-    interface IUserRepository
+    public interface IUserRepository
     {
         Task<IEnumerable<User>> GetAllUsersByNom(string nom);
         Task<User> UserLogin(string nom, string password);

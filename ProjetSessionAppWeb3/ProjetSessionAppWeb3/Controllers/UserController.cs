@@ -12,16 +12,16 @@ namespace ProjetSessionAppWeb3.Controllers
     public class UserController : Controller
     {
         // GET: UtilisateurController
-        private readonly UserRepository _ur;
+        private readonly IUserRepository _ur;
             
             
         private static int incrementedId;
-        
-        public UserController(UserRepository u)
+
+        public UserController(IUserRepository u)
         {
             _ur = u;
         }
-        
+
         public ActionResult Index()
         {
             return View();
@@ -59,18 +59,18 @@ namespace ProjetSessionAppWeb3.Controllers
             {
 
 
-                incrementedId++;
+              
                 User userRegister = new User();
                 userRegister.Email = email;
                 userRegister.Username = username;
                 userRegister.Password = password;
-                userRegister.IdUser = incrementedId;
+                
 
                await _ur.Create(userRegister);
             }
 
 
-            return View();
+            return Index();
         }
 
         [HttpPost]
