@@ -29,6 +29,7 @@ namespace ProjetSessionAppWeb3
             services.AddDbContext<DataBaseContext>(o => o.UseMySQL("server=localhost;user id=root;database=projetwebapp3;port=3306"));
             services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
             services.AddControllersWithViews();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,6 +45,7 @@ namespace ProjetSessionAppWeb3
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            app.UseSession();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
