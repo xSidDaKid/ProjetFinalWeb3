@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ProjetSessionAppWeb3.Models;
+using ProjetSessionAppWeb3.Respositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +12,8 @@ namespace ProjetSessionAppWeb3.Controllers
     public class UserController : Controller
     {
         // GET: UtilisateurController
-        private readonly 
+        private UserRepository ur;
+        private static int incrementedId;
         public ActionResult Index()
         {
             return View();
@@ -34,8 +37,23 @@ namespace ProjetSessionAppWeb3.Controllers
             return View();
         }
         [HttpGet]
-        public ActionResult Register()
+        public ActionResult Register(string username, string password, string password2, string email)
         {
+            if (password.Equals(password2))
+            {
+
+
+                incrementedId++;
+                User userRegister = new User();
+                userRegister.Email = email;
+                userRegister.Username = username;
+                userRegister.Password = password;
+                userRegister.IdUser = incrementedId;
+
+               ur.Create(userRegister);
+            }
+
+
             return View();
         }
 
