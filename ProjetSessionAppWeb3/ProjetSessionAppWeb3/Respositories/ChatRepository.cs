@@ -46,5 +46,10 @@ namespace ProjetSessionAppWeb3.Respositories
         {
             return await _context.Chats.Where(c => c.ChatName.StartsWith(name)).ToListAsync();
         }
+
+        public async Task<IEnumerable<Chat>> GetAllChatsWhereCreator(int id)
+        {
+            return await _context.Chats.Where(c => c.IdCreator.Equals(id)).ToListAsync();
+        }
     }
 }

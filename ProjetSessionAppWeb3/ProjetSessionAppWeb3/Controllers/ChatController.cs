@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ProjetSessionAppWeb3.Models;
 using ProjetSessionAppWeb3.Respositories;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ProjetSessionAppWeb3.Controllers
 {
@@ -14,8 +17,10 @@ namespace ProjetSessionAppWeb3.Controllers
         }
 
         [HttpGet]
-        public ActionResult Chat()
+        public async Task<ActionResult> Chat()
         {
+            List<Chat> chats = (List<Chat>) await _cr.GetAllChats();
+            ViewBag.chats = chats;
             return View();
         }
     }

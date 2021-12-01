@@ -1,7 +1,19 @@
-﻿
+﻿@Model Chat
 @{
     ViewData["Title"] = "Chats";
 }
 
-<h1>Chats</h1>
+<section class="p-5 ">
+    <div class="container">
+        <div class="row justify-content-center">
+            @foreach (var Chat in ViewBag.Chats)
+            {
+                <div class="col-12 border border-primary rounded">
+                    <p>@Chat.id</p>
+                    <p>@Chat.name</p>
+                </div>
+            }
+        </div>
+    </div>
+</section>
 

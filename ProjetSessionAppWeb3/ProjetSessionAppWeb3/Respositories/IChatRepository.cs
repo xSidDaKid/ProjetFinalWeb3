@@ -8,6 +8,7 @@ namespace ProjetSessionAppWeb3.Respositories
     {
         Task<IEnumerable<Chat>> GetAllChats();
         Task<IEnumerable<Chat>> GetAllChatsByName(string name);
+        Task<IEnumerable<Chat>> GetAllChatsWhereCreator(int id);
         Task CreateChat(Chat c);
         Task DeleteChat(int id);
     }

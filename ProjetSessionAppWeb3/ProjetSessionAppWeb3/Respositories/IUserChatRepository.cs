@@ -7,5 +7,7 @@ namespace ProjetSessionAppWeb3.Respositories
     {
         Task CreateUserChat(UserChat uc);
         Task DeleteUserChat(UserChat uc);
+
+        Task<IEnumerable<UserChat>> GetAllChatsWhereParticipating(int userId);
     }
 }
