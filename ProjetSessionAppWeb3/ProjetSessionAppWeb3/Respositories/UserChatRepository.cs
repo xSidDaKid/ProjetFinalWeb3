@@ -1,4 +1,5 @@
 ﻿using ProjetSessionAppWeb3.Models;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace ProjetSessionAppWeb3.Respositories
@@ -18,6 +19,11 @@ namespace ProjetSessionAppWeb3.Respositories
         {
             _context.UserChats.Remove(uc);
             await _context.SaveChangesAsync();
+        }
+
+        public Task<IEnumerable<UserChat>> GetAllChatsWhereParticipating(int userId)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

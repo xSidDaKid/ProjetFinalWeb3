@@ -83,7 +83,7 @@ namespace ProjetSessionAppWeb3.Controllers
             else
             {
                 User user = await _ur.UserLogin(username, password);
-                //Session("User") = user;
+                HttpContext.Session.SetInt32("userSession", user.IdUser);
                 return View("../Home/Index");
             }
 
