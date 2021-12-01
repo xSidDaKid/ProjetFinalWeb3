@@ -10,10 +10,6 @@ namespace ProjetSessionAppWeb3.Controllers
     {
         // GET: UtilisateurController
         private readonly IUserRepository _ur;
-
-
-        private static int incrementedId;
-
         public UserController(IUserRepository u)
         {
             _ur = u;
