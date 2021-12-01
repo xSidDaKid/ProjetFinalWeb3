@@ -1690,3 +1690,4 @@ X:\Desktop\1 - Applications Web 3\AppWeb3SessionProject\ProjetSessionAppWeb3\Pro
 X:\Desktop\1 - Applications Web 3\AppWeb3SessionProject\ProjetSessionAppWeb3\ProjetSessionAppWeb3\obj\Debug\net5.0\Razor\Views\Home\Test.cshtml.g.cs
 C:\Users\ghafr\Documents\AppWeb3SessionProject\ProjetSessionAppWeb3\ProjetSessionAppWeb3\bin\Debug\net5.0\libman.json
 C:\Users\ghafr\Documents\AppWeb3SessionProject\ProjetSessionAppWeb3\ProjetSessionAppWeb3\obj\Debug\net5.0\Razor\Views\Home\Test.cshtml.g.cs
+C:\Users\ghafr\Documents\AppWeb3SessionProject\ProjetSessionAppWeb3\ProjetSessionAppWeb3\obj\Debug\net5.0\Razor\Views\Chat\Chat.cshtml.g.cs

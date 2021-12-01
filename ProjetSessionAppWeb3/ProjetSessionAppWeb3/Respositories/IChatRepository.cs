@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace ProjetSessionAppWeb3.Respositories
 {
-    interface IChatRepository
+    public interface IChatRepository
     {
         Task<IEnumerable<Chat>> GetAllChats();
         Task<IEnumerable<Chat>> GetAllChatsByName(string name);

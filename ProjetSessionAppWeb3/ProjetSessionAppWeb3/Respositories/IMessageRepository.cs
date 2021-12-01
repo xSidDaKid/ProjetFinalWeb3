@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace ProjetSessionAppWeb3.Respositories
 {
-    interface IMessageRepository
+    public interface IMessageRepository
     {
         Task<IEnumerable<Message>> GetMessagesParChat(int chatId);
         Task Create(Message m);

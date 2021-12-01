@@ -24,6 +24,9 @@ namespace ProjetSessionAppWeb3
         {
             services.AddDbContext<DataBaseContext>(o => o.UseMySQL("server=localhost;user id=root;password=root;database=projetwebapp3;port=3306"));
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IChatRepository, ChatRepository>();
+            services.AddScoped<IUserChatRepository, UserChatRepository>();
+            services.AddScoped<IMessageRepository, MessageRepository>();
             services.AddControllersWithViews();
             services.AddSession();
             services.AddSignalR();

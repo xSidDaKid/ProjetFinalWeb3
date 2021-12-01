@@ -13,6 +13,7 @@ namespace ProjetSessionAppWeb3.Respositories
 
         public ChatRepository(DataBaseContext context)
         {
+            _context = context;
             if (_context.Chats.Count() > 0)
             {
                 id = _context.Chats.AsEnumerable().Last().IdChat;
