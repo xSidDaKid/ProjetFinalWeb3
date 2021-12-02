@@ -101,6 +101,18 @@ namespace ProjetSessionAppWeb3.Controllers
             return View("../Home/Index");
         }
 
+        public ActionResult UserPage() {
+            return View(); 
+        }
 
+        public async Task<ActionResult> Change(string username, string email, string password)
+        {
+            User user;
+            user.Email = email;
+            user.Username = username;
+            user.Password = password;   
+
+            return View("../Home/Index");
+        }
     }
 }

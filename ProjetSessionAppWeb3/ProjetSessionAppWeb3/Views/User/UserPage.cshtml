@@ -1,0 +1,50 @@
+﻿
+@model ProjetSessionAppWeb3.Models.User
+
+@{
+    ViewData["Title"] = "Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+  @if (ViewBag.userSession != null)
+    {
+        <p>@ViewBag.userSession.IdUser</p>
+        <p>@ViewBag.userSession.Username</p>
+        <h1>Bienvenue @ViewBag.userSession.Username</h1>
+    }
+
+    
+<section class="p-5 ">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-s-12 col-lg-5">
+                <form asp-controller="User" asp-action="Change" method="post" class="border border-dark rounded p-5">
+                    <div class="mb-3">
+                        <h3 class="text-center">Changement d'information</h3>
+                        <h4>Entrer votre nouveau:</h4>
+                    </div>
+                    @if (ViewBag.ErrorMessage != null)
+                    {
+                        <div class="mb-3 alert alert-danger text-white">
+                            @ViewBag.ErrorMessage
+                        </div>
+                    }
+                    <div class="mb-3">
+                        <label class="form-label " type="text">Nom d'utilisateur</label>
+                        <input type="text" asp-for="Username" name="username" id="username" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" type="text">Courriel</label>
+                        <input type="text" asp-for="Email" name="email" id="email" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" type="text">Mot de passe</label>
+                        <input type="password" asp-for="Password" name="password" id="password" class="form-control" />
+                    </div>
+                    <div class="mb-3 text-center">
+                        <button class="btn btn-primary text-center" type="submit">Entrer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
