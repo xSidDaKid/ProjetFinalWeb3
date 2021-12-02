@@ -28,5 +28,20 @@ namespace ProjetSessionAppWeb3.Controllers
             ViewBag.userSession = user;
             return View(user);
         }
+
+        [HttpPost]
+        public async Task<ActionResult> AddChat(string chatName)
+        {
+            if (!chatName.Equals(""))
+            {
+                var user = JsonConvert.DeserializeObject<User>(HttpContext.Session.GetString("userSession"));
+                int id = user.IdUser;
+                Chat newChat = new Chat();
+                newChat.ChatName = chatName;
+                newChat.IdCreator = id;
+                await _cr.CreateChat(newChat);
+            }
+            return View("/Chat");
+        }
     }
 }
