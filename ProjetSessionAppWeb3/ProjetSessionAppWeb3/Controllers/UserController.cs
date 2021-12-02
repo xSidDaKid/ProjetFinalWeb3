@@ -107,7 +107,7 @@ namespace ProjetSessionAppWeb3.Controllers
 
         public async Task<ActionResult> Change(string username, string email, string password)
         {
-            User user;
+            User user = new User();
             user.Email = email;
             user.Username = username;
             user.Password = password;   
