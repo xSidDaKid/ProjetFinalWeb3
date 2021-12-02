@@ -1,12 +1,17 @@
-﻿@Model UserController
-@using Microsoft.AspNetCore.Http
-@model User
+﻿@model ProjetSessionAppWeb3.Models.User
+
 @{
-    ViewData["Title"] = "Chats";
+    ViewData["Title"] = "Chat";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <section class="p-5 ">
-    <div class="container">
+    @if (ViewBag.userSession != null)
+    {
+        <p>@ViewBag.userSession.IdUser</p>
+        <p>@ViewBag.userSession.Username</p>
+    }
+    <div class="container"
         <div class="row justify-content-center">
             @foreach (var Chat in ViewBag.Chats)
             {
@@ -18,4 +23,3 @@
         </div>
     </div>
 </section>
-

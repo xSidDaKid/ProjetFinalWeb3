@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using ProjetSessionAppWeb3.Models;
 using ProjetSessionAppWeb3.Respositories;
 using System.Threading.Tasks;
@@ -84,9 +85,19 @@ namespace ProjetSessionAppWeb3.Controllers
             {
                 User user = await _ur.UserLogin(username, password);
                 HttpContext.Session.SetInt32("userSession", user.IdUser);
+                HttpContext.Session.SetString("userSession", JsonConvert.SerializeObject(user));
+                ViewBag.userSession = ("userSession", user);
                 return View("../Home/Index");
             }
 
+            return View("../Home/Index");
+        }
+
+        [HttpGet]
+
+        public ActionResult Logout()
+        {
+            ViewBag.UserSession = null;
             return View("../Home/Index");
         }
 

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using ProjetSessionAppWeb3.Models;
 using ProjetSessionAppWeb3.Respositories;
 using System.Collections.Generic;
@@ -19,9 +20,13 @@ namespace ProjetSessionAppWeb3.Controllers
         [HttpGet]
         public async Task<ActionResult> Chat()
         {
+            //Get Session Info
+            // var user = HttpContext.Session.GetInt32("userSession");
+            var user = JsonConvert.DeserializeObject<User>(HttpContext.Session.GetString("userSession"));
             List<Chat> chats = (List<Chat>) await _cr.GetAllChats();
             ViewBag.chats = chats;
-            return View();
+            ViewBag.userSession = user;
+            return View(user);
         }
     }
 }
