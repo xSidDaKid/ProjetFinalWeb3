@@ -102,6 +102,8 @@ namespace ProjetSessionAppWeb3.Controllers
         }
 
         public ActionResult UserPage() {
+            var user = JsonConvert.DeserializeObject<User>(HttpContext.Session.GetString("userSession"));
+            ViewBag.userSession = user;
             return View(); 
         }
 
