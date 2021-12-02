@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using ProjetSessionAppWeb3.Models;
 using ProjetSessionAppWeb3.Respositories;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -30,17 +31,18 @@ namespace ProjetSessionAppWeb3.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> AddChat(string chatName)
+        public ActionResult AddChat(string chatName)
         {
-            if (!chatName.Equals(""))
-            {
-                var user = JsonConvert.DeserializeObject<User>(HttpContext.Session.GetString("userSession"));
-                int id = user.IdUser;
-                Chat newChat = new Chat();
-                newChat.ChatName = chatName;
-                newChat.IdCreator = id;
-                await _cr.CreateChat(newChat);
-            }
+            Console.WriteLine(chatName);
+            //if (!chatName.Equals(""))
+            //{
+            //    var user = JsonConvert.DeserializeObject<User>(HttpContext.Session.GetString("userSession"));
+            //    int id = user.IdUser;
+            //    Chat newChat = new Chat();
+            //    newChat.ChatName = chatName;
+            //    newChat.IdCreator = id;
+            //    await _cr.CreateChat(newChat);
+            //}
             return View("/Chat");
         }
     }
