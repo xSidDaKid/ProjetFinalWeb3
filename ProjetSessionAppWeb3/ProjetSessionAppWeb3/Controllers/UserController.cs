@@ -109,11 +109,11 @@ namespace ProjetSessionAppWeb3.Controllers
 
         public async Task<ActionResult> Change(string username, string email, string password)
         {
-            User user = new User();
-            user.Email = email;
-            user.Username = username;
-            user.Password = password;   
-
+            User userModife = new User();
+            userModife.Email = email;
+            userModife.Username = username;
+            userModife.Password = password;
+            await _ur.Modify(userModife);
             return View("../Home/Index");
         }
     }
