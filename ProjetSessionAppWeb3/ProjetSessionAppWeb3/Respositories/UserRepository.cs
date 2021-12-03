@@ -35,6 +35,18 @@ namespace ProjetSessionAppWeb3.Respositories
             return await _context.Users.Where(u => u.Username.StartsWith(nom)).ToListAsync();
         }
 
+        public async Task Modify(User u)
+        {
+         var result = _context.Users.SingleOrDefault(u => u.IdUser.Equals(u.IdUser));
+            if (result != null)
+            {
+                result.Username = u.Username;
+                result.Email = u.Email;
+                result.Password = u.Password;
+            }
+            await _context.SaveChangesAsync();
+        }
+
         public async Task<User> UserLogin(string nom, string password)
         {
             IQueryable<User> query = _context.Users.Where(u => u.Username.
