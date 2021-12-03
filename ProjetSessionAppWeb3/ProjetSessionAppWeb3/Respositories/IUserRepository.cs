@@ -9,5 +9,6 @@ namespace ProjetSessionAppWeb3.Respositories
         Task<IEnumerable<User>> GetAllUsersByNom(string nom);
         Task<User> UserLogin(string nom, string password);
         Task Create(User u);
+        Task Modify(User u);
     }
 }
