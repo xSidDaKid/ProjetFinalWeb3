@@ -1,7 +1,7 @@
 # Projet Final Applications Web 3
 ## Chat avec ASP.NET et SignalR
 
-Le projet final avait pour but de créer un application web avec le framework ASP.NET et la librairie SignalR. Dans notre cas, on a créer un chat intéractif. On peut crééer un chat room où plusieurs utilisateurs peut se joindre. Ce projet a aussi inclue une base de donées SQL. Ce projet a été créer par 3 élèves.
+Le projet final avait pour but de créer une application web avec le framework **ASP.NET** et la librairie **SignalR**. Dans notre cas, on a créé un chat interactif. On peut créer un chat room où plusieurs utilisateurs peut se joindre. Ce projet inclut aussi une base de données **SQL** avec les informations sur les utilisateurs et les chats. Ce projet a été créé par trois élèves.
 
 **Voici les chats room:**
 
